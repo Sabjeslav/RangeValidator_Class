@@ -40,8 +40,10 @@ class RangeValidator {
     return newArray;
   }
   validate(number) {
-    if (this.getRangeArray.includes(number)) return number;
-    throw new RangeError("Number is out of range!");
+    if (number < this.from || number > this.to) {
+      throw new RangeError("Number is out of range!");
+    }
+    return number;
   }
 }
 
